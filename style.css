@@ -1,0 +1,223 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat&family=Poppins:wght@200&display=swap');
+*,
+::after,
+::before {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    border: none;
+    outline: none;
+    text-decoration: none;
+}
+
+body {
+    background-color: var(--black);
+    color: var(--litblue);
+    font-family: 'Poppins', sans-serif;
+    min-height: 100vh;
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    flex-direction: column;
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 50px 20px;
+    gap: 30px;
+}
+
+:root {
+    --black: #121314;
+    --gray: #37423D;
+    --yellow: #EDD892;
+    --litblue: #D3FFF3;
+    --border-radius: 2rem;
+    --normal: 300;
+    --regular: 500;
+    --bold: 700;
+}
+
+html {
+    overflow-x: hidden;
+    font-size: 85%;
+}
+
+h1 {
+    font-size: 30px;
+    color: var(--yellow);
+    font-weight: var(--bold);
+}
+
+img {
+    object-fit: cover;
+}
+
+.form input[type=number] {
+    background: none;
+    outline: 1px solid var(--gray);
+    color: var(--gray);
+    flex: 1 1 100%;
+    font-size: 18px;
+}
+
+.form input[type=number]:focus {
+    box-shadow: 0 0 7px hsl(206, 7%, 80%, 40%);
+}
+
+.form input[type=submit] {
+    box-shadow: inset 0 0 500px var(--yellow);
+    color: var(--gray);
+    font-weight: var(--regular);
+    flex: 1 1 100%;
+    font-size: 18px;
+    background: none;
+    transition: box-shadow ease .3s;
+}
+
+.form input {
+    height: 45px;
+    padding: 0 20px;
+    border-radius: var(--border-radius);
+}
+
+.form {
+    width: 100%;
+    max-width: 400px;
+    min-width: var(--min-width);
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+@media (min-width: 500px) {
+    .form {
+        flex-wrap: nowrap;
+    }
+    .form input[type=submit]:hover {
+        box-shadow: 0 0 10px 0 var(--yellow) inset, 0 0 10px 4px var(--yellow);
+        transition: box-shadow ease .3s;
+        cursor: pointer;
+    }
+}
+
+.cards {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    gap: 30px;
+}
+
+.card {
+    width: 100%;
+    min-width: 290px;
+    max-width: 300px;
+    height: 450px;
+    background-color: var(--yellow);
+    border-bottom: 2px solid var(--gray);
+    border-left: 2px solid var(--gray);
+    color: var(--gray);
+    display: flex;
+    flex-direction: column;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    animation: opacityCard ease-in 1s;
+}
+
+@keyframes opacityCard {
+    0% {
+        opacity: 0;
+        clip-path: polygon(0 100%, 100% 100%, 100% 100%, 0% 100%);
+    }
+    50% {
+        opacity: 0.5;
+    }
+    100% {
+        opacity: 1;
+        clip-path: polygon(0 100%, 100% 100%, 100% 0, 1% 0);
+    }
+}
+
+.card__img {
+    display: block;
+    max-width: 100%;
+    flex: 1;
+}
+
+.card__info {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+}
+
+.card__btn {
+    display: block;
+    color: var(--yellow);
+    background-color: var(--black);
+    width: 80%;
+    padding: 1rem 0;
+    border-radius: var(--border-radius);
+    margin-top: 10px;
+    font-weight: var(--bold);
+}
+
+.card__title {
+    font-size: 25px;
+}
+
+.card__precio {
+    font-weight: var(--bold);
+    font-size: 20px;
+}
+
+@media (min-width: 500px) {
+    .cards {
+        flex-direction: row;
+    }
+    .card__btn {
+        transform: translateY(500%);
+        transition: transform ease .3s;
+    }
+    .card:hover .card__btn {
+        transform: translateY(0%);
+    }
+    .card__title {
+        margin-top: 50px;
+        transition: margin-top ease .3s;
+    }
+    .card:hover .card__title {
+        margin-top: 20px;
+        transition: margin-top ease .3s;
+    }
+}
+
+.mensaje {
+    width: 90%;
+    max-width: 300px;
+    font-size: 15px;
+    position: absolute;
+    background-color: rgb(255, 26, 26);
+    padding: 3rem;
+    border-radius: 4px;
+    top: 287px;
+    left: 50%;
+    transform: translate(-50%);
+    opacity: 0;
+    visibility: hidden;
+    transition: ease .3s;
+}
+
+.showMensaje {
+    opacity: 1;
+    visibility: visible;
+    transition: ease .3s;
+}

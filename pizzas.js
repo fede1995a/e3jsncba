@@ -9,7 +9,7 @@ const pizzas = [{
         nombre: 'Muzarela',
         precio: 550,
         ing: ['Muzarela', 'Oregano'],
-        src: '/img/muzarella.jpg'
+        src: '/img/mozarella.jpg'
     },
     {
         id: 2,

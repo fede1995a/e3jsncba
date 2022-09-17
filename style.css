@@ -75,7 +75,7 @@ img {
     flex: 1 1 100%;
     font-size: 18px;
     background: none;
-    transition: box-shadow ease .3s;
+    transition: ease .3s;
 }
 
 .form input {
